@@ -1,14 +1,31 @@
 import { IonButton, IonContent, IonHeader, IonPage } from "@ionic/react";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import SubmitModar from "../../components/SubmitModar";
 
 const VisionPage = () => {
+  const submitModalRef = useRef<HTMLIonModalElement>(null);
+
+  const handleSubmit = () => {
+    console.log("제출");
+  };
+  const dismissSubmitModar = () => {
+    submitModalRef.current?.dismiss();
+  };
   return (
     <IonPage>
       <IonHeader></IonHeader>
       <IonContent>
-        <StyledApplyButton size="large">신청하기</StyledApplyButton>
+        <StyledApplyButton id="submitModarOpen" size="large">
+          신청하기
+        </StyledApplyButton>
       </IonContent>
+      <SubmitModar
+        modal={submitModalRef}
+        openId={"submitModarOpen"}
+        handleSubmit={handleSubmit}
+        dismiss={dismissSubmitModar}
+      />
     </IonPage>
   );
 };
