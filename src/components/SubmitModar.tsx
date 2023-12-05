@@ -30,53 +30,58 @@ const SubmitModar = ({
     return re.test(props);
   };
 
+  const handleCheck = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (checkIsEmail(email)) {
+      handleSubmit();
+      dismiss();
+      setTimeout(() => initState(), 500);
+    } else {
+      setIsEmail(false);
+      setShouldShake(true);
+      setTimeout(() => setShouldShake(false), 500);
+    }
+  };
+
   return (
     <StyledIonModal ref={modal} trigger={openId}>
       <BaseDiv>
-        <StyledIonInputBox $shouldShake={shouldShake}>
-          <StyledIonInput
-            type="text"
-            placeholder="이메일을 입력해주세요"
-            value={email}
-            onIonInput={(e) => {
-              setEmail(e.detail.value as string);
-              if (!isEmail && checkIsEmail(email)) {
-                setIsEmail(true);
-              }
-            }}
-          ></StyledIonInput>
-        </StyledIonInputBox>
-        {isEmail ? (
-          <></>
-        ) : (
-          <StyledAlertText>올바른 이메일 형식이 아닙니다.</StyledAlertText>
-        )}
+        <form
+          onSubmit={(e) => {
+            handleCheck(e);
+          }}
+        >
+          <StyledIonInputBox $shouldShake={shouldShake}>
+            <StyledIonInput
+              type="text"
+              placeholder="이메일을 입력해주세요"
+              value={email}
+              onIonInput={(e) => {
+                setEmail(e.detail.value as string);
+                if (!isEmail && checkIsEmail(email)) {
+                  setIsEmail(true);
+                }
+              }}
+            ></StyledIonInput>
+          </StyledIonInputBox>
+          {isEmail ? (
+            <></>
+          ) : (
+            <StyledAlertText>올바른 이메일 형식이 아닙니다.</StyledAlertText>
+          )}
 
-        <BtnBox>
-          <StyledIonButton
-            onClick={() => {
-              if (checkIsEmail(email)) {
-                handleSubmit();
-                initState();
+          <BtnBox>
+            <StyledIonButton type="submit">제출</StyledIonButton>
+            <StyledIonButton
+              onClick={() => {
                 dismiss();
-              } else {
-                setIsEmail(false);
-                setShouldShake(true);
-                setTimeout(() => setShouldShake(false), 500);
-              }
-            }}
-          >
-            제출
-          </StyledIonButton>
-          <StyledIonButton
-            onClick={() => {
-              initState();
-              dismiss();
-            }}
-          >
-            취소
-          </StyledIonButton>
-        </BtnBox>
+                setTimeout(() => initState(), 500);
+              }}
+            >
+              취소
+            </StyledIonButton>
+          </BtnBox>
+        </form>
       </BaseDiv>
     </StyledIonModal>
   );
@@ -116,7 +121,7 @@ const shakeAnimation = keyframes`
 `;
 
 const StyledAlertText = styled.div`
-  width: 10rem;
+  width: 13rem;
   text-align: right;
   font-size: 0.5rem;
   color: red;
@@ -131,8 +136,9 @@ const StyledIonInputBox = styled.div<{ $shouldShake: boolean }>`
 `;
 
 const StyledIonInput = styled(IonInput)`
-  width: 10rem;
+  width: 13rem;
   border-radius: 1rem;
+  font-size: 0.9rem;
 `;
 
 const BtnBox = styled.div`
@@ -141,7 +147,7 @@ const BtnBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 10rem;
+  width: 13rem;
 `;
 
 const StyledIonButton = styled(IonButton)`
