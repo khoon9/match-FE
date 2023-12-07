@@ -51,6 +51,10 @@ const SubmitModar = ({
             handleCheck(e);
           }}
         >
+          <FormTextDiv>
+            시범운영 준비중입니다.
+            <br /> 이메일로 오픈 알람을 받으시겠습니까 ?{" "}
+          </FormTextDiv>
           <StyledIonInputBox $shouldShake={shouldShake}>
             <StyledIonInput
               type="text"
@@ -113,6 +117,13 @@ const BaseDiv = styled.div`
   border-radius: 16px;
 `;
 
+const FormTextDiv = styled.div`
+  width: 13rem;
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--ion-color-medium-shade);
+`;
+
 const shakeAnimation = keyframes`
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -124,10 +135,11 @@ const StyledAlertText = styled.div`
   width: 13rem;
   text-align: right;
   font-size: 0.5rem;
-  color: red;
+  color: var(--ion-color-danger);
 `;
 
 const StyledIonInputBox = styled.div<{ $shouldShake: boolean }>`
+  margin-top: 1rem;
   ${(props) =>
     props?.$shouldShake &&
     css`
