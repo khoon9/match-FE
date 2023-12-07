@@ -14,12 +14,12 @@ const VisionPage = () => {
   };
   return (
     <IonPage>
-      <IonHeader></IonHeader>
-      <IonContent>
+      <BaseDiv>
+        <StyledTextDiv>본문 예시</StyledTextDiv>
         <StyledApplyButton id="submitModarOpen" size="large">
           신청하기
         </StyledApplyButton>
-      </IonContent>
+      </BaseDiv>
       <SubmitModar
         modal={submitModalRef}
         openId={"submitModarOpen"}
@@ -32,6 +32,24 @@ const VisionPage = () => {
 
 export default VisionPage;
 
+const BaseDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+`;
+
 const StyledApplyButton = styled(IonButton)`
   --border-radius: 1rem;
+`;
+
+const StyledTextDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 15rem;
 `;
