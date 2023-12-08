@@ -111,8 +111,8 @@ const BaseDiv = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 12rem;
-  width: 15.5rem;
+  /* height: 12rem; */
+  width: 16rem;
 
   border-radius: 16px;
 `;
