@@ -77,14 +77,14 @@ const VisionPage = () => {
           <StyledApplyButton id="submitModarOpen" size="large">
             신청하기
           </StyledApplyButton>
+          <SubmitModar
+            modal={submitModalRef}
+            openId={"submitModarOpen"}
+            handleSubmit={handleSubmit}
+            dismiss={dismissSubmitModar}
+          />
         </BaseDiv>
       )}
-      <SubmitModar
-        modal={submitModalRef}
-        openId={"submitModarOpen"}
-        handleSubmit={handleSubmit}
-        dismiss={dismissSubmitModar}
-      />
     </IonPage>
   );
 };
