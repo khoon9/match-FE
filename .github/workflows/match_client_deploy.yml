@@ -1,4 +1,4 @@
-name: Deploy # Workflow 이름
+name: match client deploy # Workflow 이름
 on: # Event 감지
   push:
     branches:
