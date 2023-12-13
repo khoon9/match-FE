@@ -12,7 +12,6 @@ const VisionPage = () => {
   useEffect(() => {
     if (window.location.pathname === "/vision") {
       if (uuid !== "") {
-        setTimeout(() => setIsLoading(false), 500);
         updateVisitCount(storage.get("clientVisitor").uuid);
       } else if (uuid === "") {
         getUuidfromServer();
@@ -49,10 +48,14 @@ const VisionPage = () => {
   const updateVisitCount = async (requestUuid: string) => {
     await customAxios
       .put("/visit", { uuid: requestUuid })
-      .then()
+      .then((_) => {
+        setTimeout(() => setIsLoading(false), 500);
+      })
       .catch((e) => {
         console.log(e);
-        alert("조회 증가 실패");
+        storage.remove("clientVisitor");
+        setUuid("");
+        alert("인터넷 연결을 확인해주세요.-2");
       });
   };
 
