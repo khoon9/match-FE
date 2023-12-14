@@ -23,10 +23,7 @@ const VisionPage = () => {
     await customAxios
       .get("/")
       .then((res) => {
-        storage.set("clientVisitor", { uuid: res.data });
-        setUuid(res.data);
         postNewClientVisitor(res.data);
-        setTimeout(() => setIsLoading(false), 500);
       })
       .catch((e) => {
         console.log(e);
@@ -38,6 +35,9 @@ const VisionPage = () => {
     await customAxios
       .post("/", { uuid: requestUuid })
       .then((_) => {
+        storage.set("clientVisitor", { uuid: requestUuid });
+        setUuid(requestUuid);
+        setTimeout(() => setIsLoading(false), 500);
         updateVisitCount(requestUuid);
       })
       .catch((e) => {
