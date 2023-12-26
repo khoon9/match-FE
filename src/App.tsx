@@ -3,8 +3,11 @@ import "./App.css";
 import { Route, Redirect } from "react-router-dom";
 import { IonRouterOutlet, IonTabBar, IonTabs } from "@ionic/react";
 import VisionPage from "./page/VisionPage";
+import usePageTracking from "./lib/usePageTracking";
 
 function App() {
+  usePageTracking();
+
   return (
     <IonTabs>
       <IonRouterOutlet>
