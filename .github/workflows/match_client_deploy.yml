@@ -28,6 +28,7 @@ jobs:
         run: yarn build
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_GA_TRACKING_ID: ${{ secrets.VITE_GA_TRACKING_ID }}
           CI: ""
 
       - name: zip create
