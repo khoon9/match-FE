@@ -11,6 +11,7 @@ import {
 import React, { RefObject, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import { VisitorSubmitReq } from "../../types/VisitorSubmitReq";
+import { sendVisitorEventToGa } from "../../lib/customGA4";
 
 // 제출에 대한 req type interface 생성
 interface SubmitModarProps {
@@ -71,6 +72,7 @@ const SubmitModar = ({
       <BaseDiv>
         <FormTextDiv
           onSubmit={(e) => {
+            sendVisitorEventToGa("submit-trial");
             handleCheck(e);
           }}
         >
