@@ -2,7 +2,6 @@ import {
   IonButton,
   IonInput,
   IonItem,
-  IonList,
   IonModal,
   IonSelect,
   IonSelectOption,
@@ -11,11 +10,13 @@ import {
 } from "@ionic/react";
 import React, { RefObject, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
+import { VisitorSubmitReq } from "../../types/VisitorSubmitReq";
 
+// 제출에 대한 req type interface 생성
 interface SubmitModarProps {
   modal: RefObject<HTMLIonModalElement>;
   openId: string;
-  handleSubmit: () => void;
+  handleSubmit: (req: VisitorSubmitReq) => void;
   dismiss: () => void;
 }
 
@@ -29,8 +30,10 @@ const SubmitModar = ({
   const [isEmail, setIsEmail] = useState<boolean>(true);
   const [shouldShake, setShouldShake] = useState<boolean>(false);
 
-  const [content02, setContent02] = useState("");
-  const [content03, setContent03] = useState("");
+  const [gender, setGender] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [content02, setContent02] = useState<string>("");
+  const [content03, setContent03] = useState<string>("");
 
   const initState = () => {
     setEmail("");
@@ -46,7 +49,14 @@ const SubmitModar = ({
   const handleCheck = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (checkIsEmail(email)) {
-      handleSubmit();
+      handleSubmit({
+        gender:
+          gender !== "" ? (gender === "남성" ? "MAIL" : "FEMAIL") : "NONE",
+        age: age !== "" ? age : "무응답",
+        email: email,
+        firstContent: content02,
+        secondContent: content03,
+      });
       dismiss();
       setTimeout(() => initState(), 500);
     } else {
@@ -69,6 +79,9 @@ const SubmitModar = ({
             <NormalInputContentDiv
               interface="popover"
               placeholder="성별을 선택해주세요(선택)"
+              onIonChange={(e) => {
+                setGender(e.detail.value);
+              }}
             >
               <NormalCategoryInput value="여성">여성</NormalCategoryInput>
               <NormalCategoryInput value="남성">남성</NormalCategoryInput>
@@ -79,6 +92,9 @@ const SubmitModar = ({
             <NormalInputContentDiv
               interface="popover"
               placeholder="연령대를 선택해주세요(선택)"
+              onIonChange={(e) => {
+                setAge(e.detail.value);
+              }}
             >
               <NormalCategoryInput value="20대">20대</NormalCategoryInput>
               <NormalCategoryInput value="30대">30대</NormalCategoryInput>

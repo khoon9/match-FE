@@ -10,6 +10,7 @@ import Paint from "../../assets/vision/Paint.svg";
 import People01 from "../../assets/vision/People01.svg";
 import People02 from "../../assets/vision/People02.svg";
 import BottomTitleImg from "../../assets/vision/BottomTitle.svg";
+import { VisitorSubmitReq } from "../../types/VisitorSubmitReq";
 
 const VisionPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -66,8 +67,20 @@ const VisionPage = () => {
 
   const submitModalRef = useRef<HTMLIonModalElement>(null);
 
-  const handleSubmit = () => {
-    console.log("제출");
+  const handleSubmit = async (req: VisitorSubmitReq) => {
+    await customAxios
+      .post("/visitor/submit", req)
+      .then((res) => {
+        if (res.data) {
+          alert("제출이 완료되었습니다 !");
+        } else {
+          alert("이메일이 잘못되었습니다 !");
+        }
+      })
+      .catch((e) => {
+        alert("인터넷 연결을 확인해주세요.-3");
+        console.log(e);
+      });
   };
   const dismissSubmitModar = () => {
     submitModalRef.current?.dismiss();
