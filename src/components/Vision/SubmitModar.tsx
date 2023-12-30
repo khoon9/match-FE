@@ -72,7 +72,7 @@ const SubmitModar = ({
       <BaseDiv>
         <FormTextDiv
           onSubmit={(e) => {
-            sendVisitorEventToGa("submit-trial");
+            sendVisitorEventToGa("vision-submit-trial");
             handleCheck(e);
           }}
         >
