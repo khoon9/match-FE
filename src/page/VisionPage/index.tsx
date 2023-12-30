@@ -11,6 +11,7 @@ import People01 from "../../assets/vision/People01.svg";
 import People02 from "../../assets/vision/People02.svg";
 import BottomTitleImg from "../../assets/vision/BottomTitle.svg";
 import { VisitorSubmitReq } from "../../types/VisitorSubmitReq";
+import { sendVisitorEventToGa } from "../../lib/customGA4";
 
 const VisionPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -72,6 +73,7 @@ const VisionPage = () => {
       .post("/visitor/submit", req)
       .then((res) => {
         if (res.data) {
+          sendVisitorEventToGa("submit-success");
           alert("제출이 완료되었습니다 !");
         } else {
           alert("이메일이 잘못되었습니다 !");
@@ -172,7 +174,13 @@ const VisionPage = () => {
                 <MainLogo />
               </BottomMainLogoBox>
             </BottomMainLogoContainer>
-            <StyledApplyButton id="submitModarOpen" size="large">
+            <StyledApplyButton
+              id="submitModarOpen"
+              size="large"
+              onClick={() => {
+                sendVisitorEventToGa("apply-button");
+              }}
+            >
               서비스 신청하기
             </StyledApplyButton>
           </BottomBackgroundPaint>
