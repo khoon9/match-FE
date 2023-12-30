@@ -216,6 +216,7 @@ const StyledIonButton = styled(IonButton)`
   --border-radius: 1rem;
 
   --background-color: #71c1ee;
+  --border-radius: 0.3rem;
 `;
 
 const NormalInputContainerDiv = styled.div`
