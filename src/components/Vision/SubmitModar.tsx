@@ -2,6 +2,7 @@ import {
   IonButton,
   IonInput,
   IonItem,
+  IonLabel,
   IonModal,
   IonSelect,
   IonSelectOption,
@@ -80,7 +81,7 @@ const SubmitModar = ({
             <NormalInputTitleDiv>성별</NormalInputTitleDiv>
             <NormalInputContentDiv
               interface="popover"
-              placeholder="성별을 선택해주세요(선택)"
+              placeholder="성별을 선택해주세요"
               onIonChange={(e) => {
                 setGender(e.detail.value);
               }}
@@ -93,7 +94,7 @@ const SubmitModar = ({
             <NormalInputTitleDiv>부양자분의 연령대</NormalInputTitleDiv>
             <NormalInputContentDiv
               interface="popover"
-              placeholder="연령대를 선택해주세요(선택)"
+              placeholder="연령대를 선택해주세요"
               onIonChange={(e) => {
                 setAge(e.detail.value);
               }}
@@ -140,9 +141,9 @@ const SubmitModar = ({
                 }}
                 placeholder="서비스 신청 이유에 대해 자유로이 기술해주세요"
               >
-                <div slot="label">
-                  Comments <IonText color="medium">(선택)</IonText>
-                </div>
+                <NormalLabel color="medium" slot="label">
+                  Comments <IonText>(선택)</IonText>
+                </NormalLabel>
               </NormalTextInput02>
             </NormalIonItem02>
           </NormalInputContainerDiv>
@@ -159,9 +160,9 @@ const SubmitModar = ({
                 }}
                 placeholder="론칭될 매칭서비스 온라인 플랫폼 ‘매치’ 서비스에 기대하는 점을 자유롭게 기술해주세요"
               >
-                <div slot="label">
-                  Comments <IonText color="medium">(선택)</IonText>
-                </div>
+                <NormalLabel color="medium" slot="label">
+                  Comments <IonText>(선택)</IonText>
+                </NormalLabel>
               </NormalTextInput03>
             </NormalIonItem03>
           </NormalInputContainerDiv>
@@ -253,11 +254,12 @@ const NormalInputTitleDiv = styled.div`
   height: 1.5rem;
   width: 100%;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
 `;
 
 const NormalInputContentDiv = styled(IonSelect)`
-  padding: 0.5rem 0.5rem;
+  padding: 0rem 1rem;
 
   display: flex;
   justify-content: start;
@@ -269,13 +271,13 @@ const NormalInputContentDiv = styled(IonSelect)`
   background-color: white;
   border: 1px solid #c8c8c8;
   border-radius: 0.3rem;
+
+  font-size: 0.9rem;
 `;
 
 const NormalCategoryInput = styled(IonSelectOption)`
-  padding: 0.5rem 0.5rem;
+  /* padding: 0.5rem 0.5rem; */
   width: 100%;
-
-  font-size: 1.1rem;
 `;
 
 const NormalIonItem01 = styled(IonItem)<{ $shouldShake: boolean }>`
@@ -346,3 +348,5 @@ const NormalTextInput03 = styled(IonTextarea)`
 
   font-size: 0.7rem;
 `;
+
+const NormalLabel = styled(IonLabel)``;
