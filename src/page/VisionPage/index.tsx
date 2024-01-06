@@ -75,6 +75,7 @@ const VisionPage = () => {
         if (res.data) {
           sendVisitorEventToGa("vision-submit-success");
           alert("제출이 완료되었습니다 !");
+          postClickEventToServer("SUBMIT");
         } else {
           alert("이메일이 잘못되었습니다 !");
         }
@@ -89,6 +90,17 @@ const VisionPage = () => {
   };
   const handleApplyClick = () => {
     sendVisitorEventToGa("vision-apply-button");
+    postClickEventToServer("APPLICATION");
+  };
+  const postClickEventToServer = async (prop: string) => {
+    await customAxios
+      .post(`/visit/access?clickType=${prop}`, {
+        uuid: uuid,
+      })
+      .then()
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
