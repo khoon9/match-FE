@@ -277,6 +277,8 @@ const TopBackgroundPaint = styled.div`
 `;
 
 const MainLogoContainer = styled.div`
+  margin-top: 2.5rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
