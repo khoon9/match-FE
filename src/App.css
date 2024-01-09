@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+@font-face {
+  font-family: "yeongdeok_sea";
+  src: url("./fonts/yeongdeok_sea.ttf");
+}
