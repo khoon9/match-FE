@@ -350,19 +350,19 @@ const AlertTextBox = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
 
-  /* height: 10rem; */
   width: 18rem;
 
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: #000;
+
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: yeongdeok_sea;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
   line-height: 160%;
-  /* background-color: #dfe8ff; */
-  /* border-radius: 0.5rem; */
 `;
 
 const AlertTextSpan = styled.span`
