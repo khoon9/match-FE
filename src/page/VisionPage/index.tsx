@@ -9,6 +9,7 @@ import MainLogo from "../../assets/vision/MainLogo";
 import Paint from "../../assets/vision/Paint.svg";
 import People01 from "../../assets/vision/People01.svg";
 import People02 from "../../assets/vision/People02.svg";
+import AlertImage from "../../assets/vision/Alert.svg";
 import BottomTitleImg from "../../assets/vision/BottomTitle.svg";
 import { VisitorSubmitReq } from "../../types/VisitorSubmitReq";
 import { sendVisitorEventToGa } from "../../lib/customGA4";
@@ -122,6 +123,19 @@ const VisionPage = () => {
           <SubTitleTextBox>
             치매환자 주야간보호센터 서칭부터 <br /> 요양보호사 매칭까지 한번에
           </SubTitleTextBox>
+          <AlertBox>
+            <AlertImageBox>{<img src={AlertImage} alt="경고" />}</AlertImageBox>
+            <AlertTextBox>
+              ※매치 플랫폼은 런칭 단계로,
+              <br />
+              현재 임시적으로{" "}
+              <AlertTextSpan>서울 지역의 요양보호사 매칭</AlertTextSpan>
+              <br />
+              <AlertTextSpan>서비스만 지원합니다.</AlertTextSpan> 양해
+              부탁드립니다.
+            </AlertTextBox>
+          </AlertBox>
+
           <PaintLogoBox>{<img src={Paint} alt="물감" />}</PaintLogoBox>
 
           <TextContentContainer>
@@ -237,6 +251,8 @@ const LoadingBaseDiv = styled.div`
 `;
 
 const StyledApplyButton = styled(IonButton)`
+  margin-bottom: 2.5rem;
+
   --border-radius: 0.5rem;
 
   color: black;
@@ -303,6 +319,52 @@ const SubTitleTextBox = styled.div`
   color: #2c55a6;
   font-size: 1.2rem;
   font-weight: 700;
+`;
+
+const AlertBox = styled.div`
+  margin-top: 7rem;
+  /* margin-bottom: 7rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 15rem;
+  width: 19rem;
+
+  background-color: #dfe8ff;
+  border-radius: 0.5rem;
+`;
+
+const AlertImageBox = styled.div`
+  margin-top: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AlertTextBox = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+
+  /* height: 10rem; */
+  width: 18rem;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 160%;
+  /* background-color: #dfe8ff; */
+  /* border-radius: 0.5rem; */
+`;
+
+const AlertTextSpan = styled.span`
+  color: #df0000;
 `;
 
 const PaintLogoBox = styled.div`
