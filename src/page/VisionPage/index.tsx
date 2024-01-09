@@ -209,7 +209,6 @@ const VisionPage = () => {
                 handleApplyClick();
               }}
               id="submitModarOpen"
-              size="large"
             >
               서비스 신청하기
             </StyledApplyButton>
@@ -248,19 +247,6 @@ const LoadingBaseDiv = styled.div`
 
   height: 100%;
   width: 100%;
-`;
-
-const StyledApplyButton = styled(IonButton)`
-  margin-bottom: 2.5rem;
-
-  --border-radius: 0.5rem;
-
-  color: black;
-  font-weight: 700;
-  font-size: 1.3rem;
-
-  height: 3rem;
-  width: 17rem;
 `;
 
 const TopBackgroundPaint = styled.div`
@@ -537,4 +523,22 @@ const BottomMainLogoBox = styled.div`
 
   height: 10rem;
   width: 10rem;
+`;
+
+const StyledApplyButton = styled.button`
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+
+  color: black;
+  font-weight: 700;
+  font-size: 1.3rem;
+
+  width: 18rem;
+
+  border-radius: 0.5rem;
+  background: #85bcfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
