@@ -230,11 +230,8 @@ export default VisionPage;
 const BaseDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   overflow-y: auto;
-
-  /* height: 30rem; */
   width: 100%;
 `;
 
@@ -244,32 +241,26 @@ const LoadingBaseDiv = styled.div`
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-
   height: 100%;
   width: 100%;
 `;
 
 const TopBackgroundPaint = styled.div`
   padding-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 19rem;
   width: 100%;
-
   background: linear-gradient(to bottom right, #8fb5ff 6%, transparent 33%);
 `;
 
 const MainLogoContainer = styled.div`
   margin-top: 2.5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 18rem;
   width: 18rem;
 `;
@@ -278,9 +269,7 @@ const TitleTextBox = styled.div`
   justify-content: end;
   align-items: center;
   text-align: right;
-
   width: 20rem;
-
   font-weight: 600;
 `;
 const MainLogoBox = styled.div`
@@ -288,7 +277,6 @@ const MainLogoBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 13rem;
   width: 13rem;
 `;
@@ -296,14 +284,11 @@ const MainLogoBox = styled.div`
 const SubTitleTextBox = styled.div`
   margin-left: 2rem;
   margin-right: 2rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-
   width: 18rem;
-
   color: #2c55a6;
   font-size: 1.2rem;
   font-weight: 700;
@@ -311,22 +296,18 @@ const SubTitleTextBox = styled.div`
 
 const AlertBox = styled.div`
   margin-top: 7rem;
-  /* margin-bottom: 7rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 15rem;
   width: 19rem;
-
   background-color: #dfe8ff;
   border-radius: 0.5rem;
 `;
 
 const AlertImageBox = styled.div`
   margin-top: 2rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,13 +316,9 @@ const AlertImageBox = styled.div`
 const AlertTextBox = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
-
   text-align: center;
-
   width: 18rem;
-
   color: #000;
-
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
   font-family: yeongdeok_sea;
@@ -362,7 +339,6 @@ const PaintLogoBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 10rem;
   width: 20rem;
 `;
@@ -372,37 +348,28 @@ const TextContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 18rem;
 `;
 
 const TextContentTitleBox = styled.div`
   margin-bottom: -0.5rem;
-
   display: flex;
   justify-content: start;
   align-items: center;
-
   width: 20rem;
 `;
 
 const TextContentTitle = styled.div`
   margin-left: 1.5rem;
   padding: 0.5rem 1rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  /* width: 8rem; */
-
   background-color: #8fb5ff;
   font-size: 1.2rem;
   font-weight: 800;
-
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
   border-radius: 0.5rem;
 `;
 
@@ -411,20 +378,14 @@ const TextContentBox = styled.div`
   padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   text-align: left;
-
   width: 20rem;
-
   background-color: #eef4ff;
-
   font-size: 0.9rem;
   font-weight: 500;
-
   border-radius: 0.5rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   z-index: -1;
@@ -432,10 +393,8 @@ const TextContentBox = styled.div`
 
 const TextContentRowBox = styled.div`
   display: flex;
-  /* justify-content: center; */
   align-items: start;
   text-align: left;
-
   width: 17rem;
 `;
 
@@ -447,23 +406,19 @@ const TextContentRowStart = styled.div`
 const TextContentRow = styled.div`
   display: flex;
   text-align: left;
-
   width: 15rem;
 `;
 
 const PeopleLogoContainer = styled.div`
   margin-top: -1.2rem;
-
   display: flex;
   justify-content: space-between;
-
   height: 12rem;
   width: 18rem;
 `;
 const PeopleLogoBox01 = styled.div`
   display: flex;
   align-items: end;
-
   height: 12rem;
   width: 7rem;
 `;
@@ -471,7 +426,6 @@ const PeopleLogoBox01 = styled.div`
 const PeopleLogoBox02 = styled.div`
   display: flex;
   align-items: start;
-
   height: 12rem;
   width: 7rem;
 `;
@@ -479,15 +433,12 @@ const PeopleLogoBox02 = styled.div`
 const BottomBackgroundPaint = styled.div`
   padding-top: 8rem;
   padding-bottom: 5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 35rem;
   width: 100%;
-
   background: linear-gradient(to top left, #8fb5ff 6%, transparent 33%);
 `;
 
@@ -496,31 +447,25 @@ const BottomMainLogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 35rem;
   width: 18rem;
 `;
 const BottomTitleTextBox = styled.div`
   margin-left: 1rem;
-
   display: flex;
   justify-content: end;
   align-items: center;
   text-align: right;
-
   width: 15rem;
-
   font-weight: 600;
   z-index: -2;
 `;
 const BottomMainLogoBox = styled.div`
   margin-bottom: 5rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 10rem;
   width: 10rem;
 `;
@@ -528,16 +473,12 @@ const BottomMainLogoBox = styled.div`
 const StyledApplyButton = styled.button`
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
-
   margin-bottom: 2.5rem;
   cursor: pointer;
-
   color: black;
   font-weight: 700;
   font-size: 1.3rem;
-
   width: 18rem;
-
   border-radius: 0.5rem;
   background: #85bcfc;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
